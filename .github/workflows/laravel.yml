@@ -18,7 +18,7 @@ jobs:
           sudo apt-get install php -y
           #sudo apt-get install curl git zip unzip -y
           sudo git clone https://github.com/Maheshbhoyar2302/laravel-docker2.git  /var/www/app
-          sudo chmod -R 775 /var/www/app
+          sudo chmod -R 777 /var/www/app
           sudo chown -R www-data:www-data /var/www/app/storage/
           sudo chmod -R ugo+rw /var/www/app/storage
           sudo chown -R www-data:www-data /var/www/app/bootstrap/cache/
