@@ -10,9 +10,16 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
-      - name: Deploy to server
+      - name: checkout code
         run: |
-          chmod +x ./.scripts/deploy.sh
-          "cd /app && ./.scripts/deploy.sh"
-        shell: bash
+          apt update && apt upgrade -y
+          sudo timedatectl set-timezone Asia/Kolkata
+          apt install php -y
+          apt install curl git zip unzip -y
+          git clone https://github.com/Maheshbhoyar2302/laravel-docker2.git
+          curl -sS https://getcomposer.org/installer | php
+          mv composer.phar /usr/local/bin/composer
+          cd $APP_DIR && composer install
+          cd /laravel-docker2
+          php artisan serve --host=0.0.0.0 --port=$APP_PORT
        
