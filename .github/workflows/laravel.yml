@@ -22,7 +22,7 @@ jobs:
           sudo chown -R www-data:www-data /home/ubuntu/app/storage/
           sudo chmod -R ugo+rw /home/ubuntu/app/storage
           sudo chown -R www-data:www-data /home/ubuntu/app/bootstrap/cache/
-          sudo chmod -R 755 /home/ubuntu/app/bootstrap/cache/
+          sudo chmod -R ugo+rw /home/ubuntu/app/bootstrap/cache/
           sudo curl -sS https://getcomposer.org/installer | php
           sudo mv composer.phar /usr/local/bin/composer
           cd /home/ubuntu/app/  && composer install
