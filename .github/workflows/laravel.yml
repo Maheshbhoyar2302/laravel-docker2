@@ -20,7 +20,7 @@ jobs:
           sudo git clone https://github.com/Maheshbhoyar2302/laravel-docker2.git  /home/ubuntu/app
           sudo chmod -R 777 /home/ubuntu/app/
           sudo chown -R www-data:www-data /home/ubuntu/app/storage/
-          sudo chmod -R 755 /home/ubuntu/app/storage/
+          sudo chmod -R ugo+rw /home/ubuntu/app/storage
           sudo chown -R www-data:www-data /home/ubuntu/app/bootstrap/cache/
           sudo chmod -R 755 /home/ubuntu/app/bootstrap/cache/
           sudo curl -sS https://getcomposer.org/installer | php
