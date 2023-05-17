@@ -18,12 +18,13 @@ jobs:
           sudo apt-get install php -y
           sudo apt-get install curl git zip unzip -y
           sudo git clone https://github.com/Maheshbhoyar2302/laravel-docker2.git: /
-          sudo curl -sS https://getcomposer.org/installer | php
-          sudo mv composer.phar /usr/local/bin/composer
-          cd /laravel-docker2 && composer install
           sudo chown -R www-data:www-data storage/
           sudo chmod -R 755 storage/
           sudo chown -R www-data:www-data bootstrap/cache/
           sudo chmod -R 755 bootstrap/cache/
+          sudo curl -sS https://getcomposer.org/installer | php
+          sudo mv composer.phar /usr/local/bin/composer
+          cd /laravel-docker2 && composer install
+          
           sudo php artisan serve --host=0.0.0.0 --port=80
        
